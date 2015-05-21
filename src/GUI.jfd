@@ -1,0 +1,61 @@
+JFDML JFormDesigner: "5.2.1.0.138" Java: "1.8.0_45" encoding: "UTF-8"
+
+new FormModel {
+	contentType: "form/swing"
+	root: new FormRoot {
+		add( new FormWindow( "javax.swing.JFrame", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
+			"$horizontalGroup": "par l {seq t {space :::p, par l:::p {comp previous:::::x, comp play:::::x}, par l:::p {seq {space :p:12:p, comp next:::p::p}, seq {space u:::p, comp pause:::::x}}, space ::128:x, comp scrollPane1:::p:306:p, space :::p}}"
+			"$verticalGroup": "par l {seq {space :::p, par b {comp next::b:p::p, comp previous::b:p::p}, space :::p, par b {comp play::b:p::p, comp pause::b:p::p}, space :::x}, seq l {comp scrollPane1:::p:250:p, space :0:20:x}}"
+		} ) {
+			name: "this"
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "previous"
+				"text": "Назад"
+				addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "previousActionPerformed", true ) )
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "play"
+				"text": "Играть"
+				addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "playActionPerformed", true ) )
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "pause"
+				"text": "Пауза"
+				addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "pauseActionPerformed", true ) )
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "next"
+				"text": "Вперед"
+				addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "nextActionPerformed", true ) )
+			} )
+			add( new FormContainer( "javax.swing.JScrollPane", new FormLayoutManager( class javax.swing.JScrollPane ) ) {
+				name: "scrollPane1"
+				add( new FormComponent( "javax.swing.JList" ) {
+					name: "list1"
+					addEvent( new FormEvent( "javax.swing.event.ListSelectionListener", "valueChanged", "list1ValueChanged", true ) )
+					addEvent( new FormEvent( "java.awt.event.MouseListener", "mouseClicked", "list1MouseClicked", true ) )
+				} )
+			} )
+			menuBar: new FormContainer( "javax.swing.JMenuBar", new FormLayoutManager( class javax.swing.JMenuBar ) ) {
+				name: "Menu"
+				add( new FormContainer( "javax.swing.JMenu", new FormLayoutManager( class javax.swing.JMenu ) ) {
+					name: "File"
+					"text": "Файл"
+					add( new FormComponent( "javax.swing.JMenuItem" ) {
+						name: "Open"
+						"text": "Открыть"
+						addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "OpenActionPerformed", true ) )
+					} )
+				} )
+				add( new FormComponent( "javax.swing.JMenuItem" ) {
+					name: "exit"
+					"text": "Выход"
+					addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "exitActionPerformed", true ) )
+				} )
+			}
+		}, new FormLayoutConstraints( null ) {
+			"location": new java.awt.Point( 0, 0 )
+			"size": new java.awt.Dimension( 620, 330 )
+		} )
+	}
+}
